@@ -29,16 +29,19 @@ function InsertValueAtFirst() {
         <p style={{ color: "gray" }}>
           <i>Insert any data at the beginning</i>
         </p>
+        <p className="displayed-data">
+          [
+          {array?.map(
+            (item, index) =>
+              ` ${typeof item === "string" ? `'${item}'` : item}${
+                index < array.length - 1 ? "," : ""
+              } `
+          )}
+          ]`;
+        </p>
         <input value={inputItem} onChange={(event) => typeInputItem(event)} />
         <button onClick={() => addValue(inputItem)}>Add</button>
         <button onClick={resetArray}>Reset</button>
-        <p>
-          [
-          {array?.map(
-            (item, index) => ` ${item}${index < array.length - 1 ? "," : ""} `
-          )}
-          ]
-        </p>
       </div>
     </div>
   );

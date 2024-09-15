@@ -26,15 +26,15 @@ function FindValue() {
         <p style={{ color: "gray" }}>
           <i>Find the first value greater than 3</i>
         </p>
-        <button onClick={findNumber}>Find</button>
-        <button onClick={resetState}>Reset</button>
-        <p>
+        <p className="displayed-data">
           [
           {array?.map(
             (item, index) => ` ${item}${index < array.length - 1 ? "," : ""} `
           )}
           ] = {result}
         </p>
+        <button onClick={findNumber}>Find</button>
+        <button onClick={resetState}>Reset</button>
       </div>
     </div>
   );

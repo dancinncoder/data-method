@@ -16,18 +16,19 @@ p,
 h1,
 h2,
 h3 {
-  color: white;
+  color: rgb(227, 227, 227);
 }
 
 button {
   cursor: pointer;
+  margin: 10px 0;
 }
 
 input {
   background-color: transparent;
-  border: 0.5px solid white;
+  border: 0.5px solid #e3e3e3;
   padding-left: 3px;
-  color: white;
+  color: #e3e3e3;
 }
 
 input:focus {
@@ -47,7 +48,10 @@ input:focus {
 }
 .container {
   min-width: 500px;
-  background-color: rgb(53, 53, 53);
+  background-color: #606060;
   border-radius: 20px;
   padding: 10px;
+}
+.displayed-data {
+  color: #a5ffc9;
 }

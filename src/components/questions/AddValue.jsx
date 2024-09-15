@@ -39,9 +39,7 @@ function AddValue() {
         <p style={{ color: "gray" }}>
           <i>Add 1 to the array</i>
         </p>
-        <button onClick={addNumber}>Add 1</button>
-        <button onClick={resetArray}>Reset</button>
-        <p>
+        <p className="displayed-data">
           [
           {numbers.map(
             (number, index) =>
@@ -49,10 +47,20 @@ function AddValue() {
           )}
           ]
         </p>
+        <button onClick={addNumber}>Add 1</button>
+        <button onClick={resetArray}>Reset</button>
       </div>
       <div>
         <p style={{ color: "gray" }}>
           <i>Add number to the array</i>
+        </p>
+        <p className="displayed-data">
+          [
+          {numbers.map(
+            (number, index) =>
+              ` ${number}${index < numbers.length - 1 ? "," : ""} `
+          )}
+          ]
         </p>
         <input value={freeNumber} onChange={(event) => typeFreeNumber(event)} />
         <button
@@ -66,14 +74,6 @@ function AddValue() {
         >
           Add
         </button>
-        <p>
-          [
-          {numbers.map(
-            (number, index) =>
-              ` ${number}${index < numbers.length - 1 ? "," : ""} `
-          )}
-          ]
-        </p>
       </div>
     </div>
   );

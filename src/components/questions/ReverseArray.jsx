@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 
-function RemoveFirstValue() {
-  const initialArray = ["London", "Paris", 500, 24, 98];
+function ReverseArray() {
+  const initialArray = [2, 26, 1, 54, "sky", 4];
   const [array, setArray] = useState(initialArray);
 
-  const removeFirstValue = () => {
-    setArray(array?.slice(1, -1));
+  const reverseArray = () => {
+    const reversedArray = [...array].reverse();
+    setArray(reversedArray);
   };
 
   const resetArray = () => {
     setArray(initialArray);
   };
 
-  // array.shift();
-
-  console.log("3. RemoveFirstValue:", array);
+  console.log("7. Reverse Array:", array);
 
   return (
     <div className="container">
-      <h2>3. Remove First Value</h2>
+      <h2>7. Reverse Array</h2>
       <div>
-        <p>Remove the first value from an array.</p>
+        <p>Reverse the order of the values in the array.</p>
         <p style={{ color: "gray" }}>
-          <i>Remove the first value from an array.</i>
+          <i> Reverse the array</i>
         </p>
         <p className="displayed-data">
           [
@@ -34,11 +33,11 @@ function RemoveFirstValue() {
           )}
           ]
         </p>
-        <button onClick={removeFirstValue}>Remove</button>
+        <button onClick={reverseArray}>Reverse</button>
         <button onClick={resetArray}>Reset</button>
       </div>
     </div>
   );
 }
 
-export default RemoveFirstValue;
+export default ReverseArray;

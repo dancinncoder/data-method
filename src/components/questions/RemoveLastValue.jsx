@@ -32,9 +32,7 @@ function RemoveLastValue() {
         <p style={{ color: "gray" }}>
           <i>Remove last value from the array</i>
         </p>
-        <button onClick={removeLastValue}>Remove</button>
-        <button onClick={reset}>Reset</button>
-        <p>
+        <p className="displayed-data">
           [
           {numbers?.map(
             (number, index) =>
@@ -42,6 +40,8 @@ function RemoveLastValue() {
           )}
           ]
         </p>
+        <button onClick={removeLastValue}>Remove</button>
+        <button onClick={reset}>Reset</button>
       </div>
     </div>
   );
