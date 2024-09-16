@@ -6,6 +6,9 @@ import InsertValueAtFirst from "./questions/InsertValueAtFirst";
 import FindValue from "./questions/FindValue";
 import SortArray from "./questions/SortArray";
 import ReverseArray from "./questions/ReverseArray";
+import FilterOutEvenValubes from "./questions/FilterOutEvenValues";
+import TransformValues from "./questions/TransformValues";
+import SumAllValues from "./questions/SumAllValues";
 
 function ArrayPracticeContainer() {
   return (
@@ -21,6 +24,9 @@ function ArrayPracticeContainer() {
         <FindValue />
         <SortArray />
         <ReverseArray />
+        <FilterOutEvenValubes />
+        <TransformValues />
+        <SumAllValues />
       </div>
     </div>
   );
