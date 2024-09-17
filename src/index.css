@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212121;
 }
 
 code {
@@ -37,6 +38,78 @@ input:focus {
 
 .practice-container {
   padding: 5px 10px 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scroll-button-container {
+  position: fixed;
+  right: 20px;
+  top: 10%;
+  display: none;
+}
+
+.scroll-button-container.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-button {
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #3e3e3e;
+  border: 1px solid #212121;
+  color: #e3e3e3;
+}
+
+.scroll-button.selected {
+  color: #a5ffc9;
+  background-color: #606060;
+}
+
+.accordion {
+  background-color: #606060;
+  color: #a5ffc9;
+  border-radius: 20px;
+  min-width: 500px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.1s;
+  border: 0.1px solid #606060;
+
+  &:hover {
+    border: 0.1px solid #a5ffc9;
+    background-color: #3e3e3e;
+  }
+}
+
+.accordion.open {
+  border: 0.5px solid #a5ffc9;
+  background-color: #3e3e3e;
+}
+
+.data-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.data-board-container.open {
+  max-height: 4000px;
+  opacity: 1;
 }
 
 .data-board {
@@ -44,14 +117,22 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+
+  div {
+    padding: 10px 0;
+  }
 }
+
 .container {
   min-width: 500px;
   background-color: #606060;
   border-radius: 20px;
   padding: 10px;
 }
+
 .displayed-data {
   color: #a5ffc9;
 }
