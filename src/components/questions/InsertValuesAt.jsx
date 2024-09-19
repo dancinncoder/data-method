@@ -1,118 +1,43 @@
 import React, { useState } from "react";
 
-function SortArray() {
-  const initialNumberArray = [4, -1, 66, 45, 2, 9];
-  const initialStringArray = ["corn", "banana", "apple", "cider", "ham"];
-  const [numberArray, setNumberArray] = useState(initialNumberArray);
-  const [stringArray, setStringArray] = useState(initialStringArray);
+function InsertValuesAt() {
+  const initialArray = [4, 1, 8, 21];
+  const [array, setArray] = useState(initialArray);
 
-  const sortNumberArray = () => {
-    // Copy -> Sorting
-    const sortedArray = [...numberArray].sort((a, b) => a - b);
+  const insertArray = () => {
+    const newArray = [...array];
+    newArray?.splice(2, 0, 3);
 
-    // Update the state
-    setNumberArray(sortedArray);
-
-    // setNumberArray(array?.sort());
-    // Why not numberArray?.sort()
-    // numberArray.sort() method modifies direcetly the original array data. Therefore, in React, for changes to trigger a re-render, the state needs to be treated as immutable. Since sort() modifies the original array, React may not detect the change and, thus, doesn't trigger a re-render.
+    setArray(newArray);
+    // Array.splice() enables to remove content of an array or replace existing data of the array. However, it modifies the original array data directly, either  it is needed to make a copy of an data using spread operator or Array.slice() in React environment.
+    // Array.splice(startIndex, remove count, new data to replace to existing data)
   };
 
-  const sortDesNumberArray = () => {
-    const sortedDesArray = [...numberArray].sort((a, b) => b - a);
-    setNumberArray(sortedDesArray);
+  const resetArray = () => {
+    setArray(initialArray);
   };
 
-  const sortStringArray = () => {
-    const sortedStringArray = [...stringArray].sort();
-    setStringArray(sortedStringArray);
-  };
-
-  const sortDesStringArray = () => {
-    const sortedDesStringArray = [...stringArray].sort((a, b) =>
-      b.localeCompare(a)
-    );
-    setStringArray(sortedDesStringArray);
-
-    // The localeCompare() method :
-    // This method compares two strings in the current locale. The localeCompare() method returns sort order -1, 1, or 0 (for before, after, or equal). The current locale is based on the language settings of the browser.
-  };
-
-  const resetNumberArray = () => {
-    setNumberArray(initialNumberArray);
-  };
-
-  const resetStringArray = () => {
-    setStringArray(initialStringArray);
-  };
-
-  console.log("6. SortNumberArray/SortStringArray", numberArray, stringArray);
+  console.log("11. InsertValuesintotheArray", array);
   return (
     <div className="container">
-      <h2>6. Sort Array</h2>
+      <h2>11. Insert Values into the Array</h2>
       <div>
-        <p>Sort the values in the array in ascending order.</p>
+        <p>Insert Values into the Array</p>
         <p style={{ color: "gray" }}>
-          <i>Sort number array in ascending order</i>
+          <i>Insert 3 at index 2</i>
         </p>
         <p className="displayed-data">
           [
-          {numberArray.map(
-            (item, index) =>
-              ` ${item}${index < numberArray.length - 1 ? "," : ""} `
+          {array?.map(
+            (item, index) => ` ${item}${index < array.length - 1 ? "," : ""} `
           )}
           ]
         </p>
-        <button onClick={sortNumberArray}>Sort</button>
-        <button onClick={resetNumberArray}>Reset</button>
-      </div>
-      <div>
-        <p style={{ color: "gray" }}>
-          <i>Sort number array in descending order</i>
-        </p>
-        <p className="displayed-data">
-          [
-          {numberArray.map(
-            (item, index) =>
-              ` ${item}${index < numberArray.length - 1 ? "," : ""} `
-          )}
-          ]
-        </p>
-        <button onClick={sortDesNumberArray}>Sort</button>
-        <button onClick={resetNumberArray}>Reset</button>
-      </div>
-      <div>
-        <p style={{ color: "gray" }}>
-          <i>Sort string array in ascending order</i>
-        </p>
-        <p className="displayed-data">
-          [
-          {stringArray?.map(
-            (item, index) =>
-              ` '${item}'${index < stringArray.length - 1 ? "," : ""} `
-          )}
-          ]
-        </p>
-        <button onClick={sortStringArray}>Sort</button>
-        <button onClick={resetStringArray}>Reset</button>
-      </div>
-      <div>
-        <p style={{ color: "gray" }}>
-          <i>Sort string array in descending order</i>
-        </p>
-        <p className="displayed-data">
-          [
-          {stringArray?.map(
-            (item, index) =>
-              ` '${item}'${index < stringArray.length - 1 ? "," : ""} `
-          )}
-          ]
-        </p>
-        <button onClick={sortDesStringArray}>Sort</button>
-        <button onClick={resetStringArray}>Reset</button>
+        <button onClick={insertArray}>Insert</button>
+        <button onClick={resetArray}>Reset</button>
       </div>
     </div>
   );
 }
 
-export default SortArray;
+export default InsertValuesAt;

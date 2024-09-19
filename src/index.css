@@ -108,7 +108,7 @@ input:focus {
 }
 
 .data-board-container.open {
-  max-height: 4000px;
+  max-height: 5000px;
   opacity: 1;
 }
 

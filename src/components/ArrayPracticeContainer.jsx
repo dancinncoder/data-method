@@ -9,6 +9,9 @@ import ReverseArray from "./questions/ReverseArray";
 import FilterOutEvenValues from "./questions/FilterOutEvenValues";
 import TransformValues from "./questions/TransformValues";
 import SumAllValues from "./questions/SumAllValues";
+import InsertValuesAt from "./questions/InsertValuesAt";
+import RemoveValuesAt from "./questions/RemoveValuesAt";
+import ExtractFromTo from "./questions/ExtractFromTo";
 
 function ArrayPracticeContainer() {
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -94,6 +97,15 @@ function ArrayPracticeContainer() {
           </div>
           <div id="section10">
             <SumAllValues />
+          </div>
+          <div id="section11">
+            <InsertValuesAt />
+          </div>
+          <div id="section12">
+            <RemoveValuesAt />
+          </div>
+          <div id="section13">
+            <ExtractFromTo />
           </div>
         </div>
       </div>
